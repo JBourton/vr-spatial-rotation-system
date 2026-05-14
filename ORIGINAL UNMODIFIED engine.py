@@ -1,4 +1,6 @@
-# Note, this is the original unmodified engine given to us with the coursework. I'm including this as the coursework report seems to require it in the submission.
+# Note, this is the original unmodified engine given to us with the coursework. 
+# This is not my work; full credit goes to Nicolas Rougier for the original engine and George Koulieris at Durham University for the modification of it.
+# See render.py for my adaption of it.
 
 
 # Tiny 3D Renderer (with outlines) augmented with perspective projection
