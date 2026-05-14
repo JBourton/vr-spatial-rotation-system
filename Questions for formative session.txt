@@ -1,0 +1,23 @@
+Questions for formative session
+
+Do we need both sequences (accel + gyro, then w/ magnometer too) or is just the one w/ all 3 fine?
+
+How do we investigate alpha values? Is it sufficient to visually inspect and comment or should we modify our code to find when the roll pitch and yaw are near 0 and compare the values at different alphas?
+
+render more frames in final video
+
+show 2 videos, one w/ accel + 1 with accel + gyro, but fire up the sequence of all 3 on startup
+
+
+ADD FLOOR IN AND MAKE FALLING BUNNIES HIT THAT
+
+
+Do we really need the floor, and if so, do we need the falling bunnies to collide with it and bounce off (which I think might be repeated unless we model it specifically not to be so), or can they just hit the floor and stay there?
+
+
+
+Can we just upload one render.py file, or do we need one for each question / sub question?
+
++ figure out what needs videos & what needs static videos. One combined video for 3.1 and 3.2, or 2 separate ones?
+
+Are the static renders needed for every subproblem, and are you looking for just max roll, pitch and yaw? (so 3 + maybe a baseline one)
