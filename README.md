@@ -1,4 +1,14 @@
-### How to run my coursework attempt
+### Running the spatial rotation renderer
+
+### Project overview
+This project renders the Stanford bunny as a simple VR-style orientation visualiser driven by the supplied IMU dataset. In `render.py`, the gyroscope readings are integrated into quaternion orientation estimates, then corrected with complementary filters: the first sequence fuses gyroscope and accelerometer data for roll/pitch stability, while the second sequence adds magnetometer correction to reduce yaw drift. The central bunny uses this fused orientation, while additional falling bunnies are spawned with simple gravity, drag, and collision behaviour to make the rendered scene more dynamic.
+
+The renderer is deliberately software-based: the mesh is loaded from `bunny.obj`, normalised into view, transformed with matrices, rasterised into a framebuffer, and displayed with OpenCV. This keeps the coursework focus on the transformation, filtering, and rendering pipeline rather than relying on a game engine.
+
+### Static render reference
+![Static renders showing rest frame, peak roll, peak pitch, and peak yaw](/imgs/static_renders.png)
+
+The static render above is a quick visual reference for the orientation behaviour used by the main sequence. It shows the bunny at its rest frame, then at the peak roll, pitch, and yaw poses dictated by the orientation code in `render.py`. Internally, each fused quaternion is converted back into Euler angles with `convert_quaternion_to_euler`, and the central bunny's model matrix applies those rotations as `matrix_rotater_z(yaw) @ matrix_rotater_y(pitch) @ matrix_rotater_x(roll)`. The static image isolates those maximum-axis poses to show what each rotational component is doing before watching the full time-varying render.
 
 ### Installing dependencies
 I've only used basic libraries for this, so chances are, these libraries are already on your computer. However, if they're not, you can install them with these instructions.
